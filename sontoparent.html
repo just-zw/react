@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/_react@17.0.1@react/umd/react.development.js"></script>
+    <script src="./node_modules/_react-dom@17.0.1@react-dom/umd/react-dom.development.js"></script>
+    <script src="./node_modules/_babel-standalone@6.26.0@babel-standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+
+   <script type="text/babel">
+class Person extends React.Component{
+constructor(props){
+    super(props)
+    this.state={
+    data:null
+}
+}
+setdata=(data)=>{
+    this.setState({
+data
+    })
+}
+render(){
+    return (
+    <div>
+        <Child setdata={this.setdata} />{this.state.data}        
+        </div>)
+}
+}
+class Child extends React.Component{
+    constructor(props){
+super(props)
+
+    }
+    getdata=()=>{
+        this.props.setdata(111111)
+    }
+    render(){
+        return (<div myname="zw">
+            <button onClick={this.getdata}>点我</button>
+            </div>)
+    }
+}
+ReactDOM.render(
+    <Person/>,
+    document.getElementById('app')
+)
+
+
+   </script> 
+</body>
+</html>

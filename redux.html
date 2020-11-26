@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/_react@17.0.1@react/umd/react.development.js"></script>
+    <script src="./node_modules/_react-dom@17.0.1@react-dom/umd/react-dom.development.js"></script>
+    <script src="./node_modules/_babel-standalone@6.26.0@babel-standalone/babel.min.js"></script>
+    <script src="./node_modules/_redux@4.0.5@redux/src/createStore.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+    function Redux(){
+let store=Redux.createStore(reducer)
+function reducer(state={num:0},action){
+if(action.type==='a'){
+    state.num++
+}else if(state.type==='b'){
+    state.num--
+}
+return {...state}
+}
+function add(){
+    store.dispatch({type:'a'})
+}
+function sub(){
+    store.dispatch({type:'b'})
+}
+return (
+    <div>
+    <button onClick={add}>+</button ><button onClick={sub}>-</button>
+    
+    </div>
+)
+    }
+ ReactDOM.render(
+     <Redux></Redux>,
+    document.getElementById('app')
+ )   
+    
+    </script>
+</body>
+</html>

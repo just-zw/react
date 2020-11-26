@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+class man{
+    constructor(){
+        this.man=123,
+        this.women=456
+    }
+    static names=123345346;
+    static click(){
+        console.log(123);
+    }
+}
+class person extends man{
+    constructor(){
+        super()
+        console.log(this);
+        
+        console.log(this);
+    }
+}
+// man.names
+// man.click()
+// let p=new person();
+// console.log(p.man);
+
+
+// let newarr=[0,1,2,3,4,5];
+// //  let arr12=newarr.filter(v=>{
+// // return v
+// // })
+// // console.log(arr12);
+// let res=newarr.reduce((pre,v,index)=>{
+// return pre+v
+// },10)
+// console.log(res);
+
+let arr=[1,2,3,4,5]
+Array.prototype.ages=123
+arr.forEach(v=>{
+    console.log(v);
+})
+for(let i in arr){
+    console.log(i);
+}
+
+    </script>
+</body>
+</html>

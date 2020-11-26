@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="text4.css">
+    <script src="./node_modules/_react@17.0.1@react/umd/react.development.js"></script>
+<script src="./node_modules/_react-dom@17.0.1@react-dom/umd/react-dom.development.js"></script>
+<script src="./node_modules/_babel-standalone@6.26.0@babel-standalone/babel.min.js"></script>
+<body>
+   <div id="app" class="123" class="456" style="background:red;width:1000px;height:1000px;background:green;margin-top:100px"></div> 
+   <script type="text/babel">
+/*function gettime(){
+let times=new Date().toLocaleString()
+let ele=<h1>{times}</h1>
+let app=document.getElementById('app')
+ReactDOM.render(ele,app)
+}
+setInterval(gettime,1000)*/
+//无状态组建
+// function Gettem(props){
+//     console.log(props);
+//     return <h1>{props.names}</h1>
+// }
+// ReactDOM.render(
+// <Gettem names="zhangsan" ages="123456"/>,
+// document.getElementById('app')
+// )
+
+
+//有状态的组建
+class Person extends React.Component{
+    constructor(){
+super(),
+this.state={
+    mynames:'zw'
+}
+console.log(this);
+console.log(this.props);
+this.click=this.click.bind(this)
+    }
+  click(){
+      console.log(this);
+  }  
+    render(){
+
+       let sty={
+           background:"red",
+           height:'100px',
+           width:'200px',
+           "border-bottom":'2px'
+       }
+        return <div><button onClick={this.click}>点我</button><h1 style={sty} style={{background:'green'}} className="aa" className="bb">{this.props.names}</h1>{this.state.mynames}<h1></h1></div>
+    }
+    componentDidMount(){
+        console.log(this.state.mynames);
+        this.setState({
+            mynames:'zhhhh'
+        })
+        console.log(this.state.mynames);
+    }
+}
+ReactDOM.render(
+    <Person names="aaaa" ages="bbbb"/>,
+    document.getElementById('app')
+)
+   </script>
+</body>
+</html>
